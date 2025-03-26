@@ -1,21 +1,33 @@
 package org.example;
 
+/*
+ * Ejercicio 4
+ */
 public class Alumno {
     
     private String nombre;
     
     public Alumno () {
-        nombre = " "; //El error está en que se debe inicializar en vacío, en lugar de null lo inicié con " "
+        nombre = null; //El error está en que se debe inicializar en vacío, en lugar de null lo inicié con " "
     }
 
     public String getNombreAdmiracion() {
-        return nombre.isEmpty() ? "!" : nombre.concat("!"); //Primero evalúa si está vacío y luego concatena el signo de exclamación
+        if (nombre == null) {
+            return "¡No hay nombre!";
+        } else {
+            return nombre.concat("!");
+        }
     }
 
 
     public static void main (String[] args) {
         Alumno alumno = new Alumno();
         System.out.println(alumno.getNombreAdmiracion());
+        System.out.println(recorrer("Hola Mundo"));
+        System.out.println(getValor());
+        System.out.println(getPrimerCaracter("Hola Mundo"));
+        System.out.println(paraAString(5));
+
     }
 
 
@@ -37,14 +49,16 @@ public class Alumno {
     }
 
     public static char getPrimerCaracter(String palabra) {
-        String string[] = new String[5];
-        return (string[1].charAt(0)); // El error está en el índice, debería ser 0
+        if (palabra == null || palabra.length() == 0) {
+            return ' ';
+        }
+        return (palabra.charAt(0)); // El error está en el índice, debería ser 0
     }
 
     public static String paraAString(int a) {
 
 
-        return Integer.toString(a); //El error está en que se debe retornar el valor de x1, invoqué el método Integer.toString(a) en lugar de x1;
+        return Integer.toString(a); //El error está en que se debe convertir a String con Integer.toString(a)
 
     }
 }

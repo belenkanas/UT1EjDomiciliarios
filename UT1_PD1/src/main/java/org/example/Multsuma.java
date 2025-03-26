@@ -1,5 +1,8 @@
 package org.example;
 
+/*
+ * Ejercicio 3
+ */
 public class Multsuma {
 
     public Multsuma() {
