@@ -56,9 +56,8 @@ public class Alumno {
     }
 
     public static String paraAString(int a) {
-
-
-        return Integer.toString(a); //El error está en que se debe convertir a String con Integer.toString(a)
+        Object x1 = Integer.valueOf(a);
+        return (String) (x1) ; //El error está en que se debe convertir a String con Integer.toString(a)
 
     }
 }
